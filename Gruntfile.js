@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     bower: {
       install: {
         options: {
-          targetDir: "../SNS-Servlet/WebContent/bower",
+          targetDir: "bower",
           layout: "byType",
           install: true,
           verbose: false,
@@ -20,8 +20,8 @@ module.exports = function(grunt) {
     react: {
       combined_file_output: {
         files: {
-          'src/js/react_combined.js': [
-            'src/jsx/react_test.jsx'
+          'js/react_compiled.js': [
+            'jsx/react.jsx'
           ]
         }
       }

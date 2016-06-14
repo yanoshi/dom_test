@@ -1,4 +1,4 @@
-var Node = React.createClass({
+var Node = React.createClass({displayName: "Node",
   clickHandle : function(){
     alert("fuga" + this.props.num);
   },
@@ -8,10 +8,10 @@ var Node = React.createClass({
     };
     
     return (
-      <div>
-        <span style = {this.spanStyle}>{this.props.text}</span>
-        <a href="#" onclick = {this.clickHandle}>Click!</a>
-      </div>
+      React.createElement("div", null, 
+        React.createElement("span", {style: this.spanStyle}, this.props.text), 
+        React.createElement("a", {href: "#", onclick: this.clickHandle}, "Click!")
+      )
     );
   }
 });
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var text = "hoge" + i;
     
     ReactDOM.render(
-      <Node num = {i} colorNum = {colorNum} text = {text} />,
+      React.createElement(Node, {num: i, colorNum: colorNum, text: text}),
       div
       );
     output.appendChild(div);

@@ -1,0 +1,20 @@
+{
+  "name": "dom_test",
+  "description": "",
+  "main": "",
+  "authors": [
+    "yanoshi"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.1.0"
+  }
+}

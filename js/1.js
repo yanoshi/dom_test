@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
   var startTime = new Date();
   var output = document.getElementById("output");
+  var fragment = new DocumentFragment();
   
   for(var i = 0;i < 10000;i++){
     var span = document.createElement("span");
@@ -19,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function(){
     div.appendChild(span);
     div.appendChild(link);
     
-    output.appendChild(div);
+    fragment.appendChild(div);
   }
-  
+  output.appendChild(fragment);
   var endTime = new Date();
   
   document.getElementById("result").innerHTML = (endTime - startTime) + "ms";

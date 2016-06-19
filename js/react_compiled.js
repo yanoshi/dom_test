@@ -19,18 +19,22 @@ var Node = React.createClass({displayName: "Node",
 document.addEventListener("DOMContentLoaded", function(){
   var startTime = new Date();
   var output = document.getElementById("output");
+  var fragment = new DocumentFragment();
+  
     
   for(var i = 0;i < 10000;i++){
-    var div = document.createElement("div");
+    var fragmentTemp = new DocumentFragment();
     var colorNum = parseInt((i / 10000) * 255);
     var text = "hoge" + i;
     
     ReactDOM.render(
       React.createElement(Node, {num: i, colorNum: colorNum, text: text}),
-      div
+      fragmentTemp
       );
-    output.appendChild(div);
+    fragment.appendChild(fragmentTemp);
   }
+  
+  output.appendChild(fragment);
   
   var endTime = new Date();
   

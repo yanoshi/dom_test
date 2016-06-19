@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
   
   var node = document.getElementById("hidden");
   var output = document.getElementById("output");
+  var fragment = new DocumentFragment();
   
   for(var i = 0;i < 10000;i++){
     var nodeClone = node.cloneNode(true);
@@ -21,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function(){
       alert("fuga" + i);
     });
     
-    output.appendChild(nodeClone);
+    fragment.appendChild(nodeClone);
   }
+  output.appendChild(fragment);
   
   var endTime = new Date();
   
